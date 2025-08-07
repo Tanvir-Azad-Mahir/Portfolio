@@ -14,6 +14,7 @@ body {
   background-color: #ffffff;
   color: #222;
   line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
 }
 
 /* Navbar */
@@ -66,13 +67,19 @@ header {
 }
 
 .profile-pic {
-  width: 180px;
-  height: 180px;
+  width: 240px;
+  height: 240px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #f1f1f1;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.5rem;
+  border: 4px solid var(--accent-color, #007bff);
+  margin: 1.5rem auto;
+  display: block;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
 }
 
 .nickname {
@@ -110,6 +117,14 @@ header {
   max-width: 900px;
   margin: 4rem auto;
   padding: 0 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section h2 {
@@ -142,4 +157,69 @@ footer {
   color: #888;
   font-size: 0.9rem;
   margin-top: 2rem;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark-mode header {
+  background: #1f1f1f;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .navbar a {
+  color: #ccc;
+}
+
+body.dark-mode .navbar a:hover {
+  color: #60a5fa;
+}
+
+body.dark-mode .bio,
+body.dark-mode .section p,
+body.dark-mode .project-list li {
+  color: #ccc;
+}
+
+body.dark-mode footer {
+  background-color: #181818;
+  color: #aaa;
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: inherit;
+  user-select: none;
+  z-index: 1000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    max-width: 95%;
+    margin: 2rem auto;
+  }
+
+  .profile-pic {
+    width: 180px;
+    height: 180px;
+  }
+
+  .navbar {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
 }
