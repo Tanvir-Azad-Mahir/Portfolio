@@ -162,4 +162,39 @@ footer {
   .divider {
     max-width: 100%;
   }
+  .dark-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 8px;
+  background: #f3f4f6;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+.dark-toggle:hover {
+  background: #e5e7eb;
+}
+
+body.dark {
+  background-color: #111827;
+  color: #f9fafb;
+}
+body.dark .bio,
+body.dark h1,
+body.dark p,
+body.dark footer {
+  color: #e5e7eb;
+}
+body.dark .divider {
+  border-color: #374151;
+}
+body.dark .dark-toggle {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
 }
