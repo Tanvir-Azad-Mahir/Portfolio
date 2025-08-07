@@ -1,72 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tanvir Azad (Mahir) | Portfolio</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <!-- CSS will be linked or embedded separately -->
-</head>
-<body>
-  <div class="container" role="main">
-    <div class="left" aria-label="Profile photo of Tanvir Azad">
-      <img
-        src="https://i.ibb.co/2ZkC1Kw/profile-pic.jpg"
-        alt="Tanvir Azad (Mahir)"
-        class="profile-img"
-        loading="lazy"
-        width="280"
-        height="280"
-      />
-    </div>
-    <div class="right">
-      <header>
-        <h1>Tanvir Azad (Mahir)</h1>
-        <p class="tagline">Software Developer &amp; Tech Enthusiast</p>
-      </header>
-      <section class="bio" aria-label="About Tanvir Azad">
-        <p>
-          Passionate about building modern, clean, and responsive web applications. Experienced
-          in JavaScript, React, and backend technologies. Always eager to learn and innovate.
-        </p>
-      </section>
-      <hr class="divider" />
-      <nav class="socials" aria-label="Social media and contact links">
-        <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-            alt="Facebook Icon"
-            width="28"
-            height="28"
-          />
-        </a>
-        <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
-            alt="GitHub Icon"
-            width="28"
-            height="28"
-          />
-        </a>
-        <a href="mailto:your.email@example.com" aria-label="Email">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
-            alt="Email Icon"
-            width="28"
-            height="28"
-          />
-        </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tanvir Azad (Mahir) | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="your-icon-link-here" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h2 class="logo">Mahir</h2>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
+    </header>
+
+    <div class="container">
+      <img src="your-image.jpg" alt="Tanvir Azad (Mahir)" class="profile-pic" />
+      <h1>Tanvir Azad <span class="nickname">(Mahir)</span></h1>
+      <p class="bio">A curious mind crafting creative code and clean design. Tech enthusiast, builder, and lifelong learner.</p>
+      
+      <div class="socials">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <img src="icons/facebook.svg" alt="Facebook" />
+        </a>
+        <a href="https://github.com" target="_blank" aria-label="GitHub">
+          <img src="icons/github.svg" alt="GitHub" />
+        </a>
+        <a href="mailto:youremail@example.com" target="_blank" aria-label="Email">
+          <img src="icons/mail.svg" alt="Email" />
+        </a>
+      </div>
     </div>
-  </div>
 
-  <footer aria-label="Footer information" style="text-align: center; margin-top: 40px; color: #6b7280; font-size: 0.9rem;">
-    &copy; 2025 Tanvir Azad (Mahir). All rights reserved.
-  </footer>
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>I’m a CSE student at UIU, passionate about robotics, AI, and building things that make people say "wow". I enjoy blending design with logic to create unique digital experiences.</p>
+    </section>
 
-  <!-- JS will be added separately -->
-</body>
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        <li><strong>Spider Robot:</strong> Self-balancing Hexapod with Bluetooth + Wi-Fi control.</li>
+        <li><strong>GOATBALL:</strong> Multiplayer snake-like ball game with power-ups and real-time hosting.</li>
+        <!-- Add more projects as needed -->
+      </ul>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>If you’d like to collaborate or just say hi, feel free to drop a message via social links or email.</p>
+    </section>
+
+    <footer>
+      <p>© 2025 Tanvir Azad. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
