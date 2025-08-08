@@ -1,66 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tanvir Azad (Mahir) | Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="your-icon-link-here" />
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <h2 class="logo">Mahir</h2>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="container">
-     <img src="assets/mahir.png" alt="Tanvir Azad (Mahir)" class="profile-pic" />
-
-      <h1>Tanvir Azad <span class="nickname">(Mahir)</span></h1>
-      <p class="bio">A curious mind crafting creative code and clean design. Tech enthusiast, builder, and lifelong learner.</p>
-      
-      <div class="socials">
-        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-          <img src="icons/facebook.svg" alt="Facebook" />
-        </a>
-        <a href="https://github.com" target="_blank" aria-label="GitHub">
-          <img src="icons/github.svg" alt="GitHub" />
-        </a>
-        <a href="mailto:youremail@example.com" target="_blank" aria-label="Email">
-          <img src="icons/mail.svg" alt="Email" />
-        </a>
-      </div>
-    </div>
-
-    <section id="about" class="section">
-      <h2>About Me</h2>
-      <p>I’m a CSE student at UIU, passionate about robotics, AI, and building things that make people say "wow". I enjoy blending design with logic to create unique digital experiences.</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Frontend Developer</title>
+    <style>
+        /* Modern Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Developer-themed styles */
+        body {
+            font-family: 'Courier New', monospace;
+            background: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 0;
+            background: #fff;
+            border-bottom: 1px solid #eaeaea;
+        }
+        nav a {
+            margin: 0 1.5rem;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+        
+        /* Hero Section with Photo */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 2rem;
+            border: 3px solid #333;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Skills */
+        .skills {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .skills span {
+            background: #f0f0f0;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#featured">Featured</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <!-- Hero Section with Photo -->
+    <section class="hero">
+        <!-- Replace "images/profile.jpg" with your image path -->
+        <img src="assets/mahir.png" alt="Your Name" class="profile-pic">
+        
+        <h1>Frontend Developer</h1>
+        <p>Who focuses on writing clean, elegant, and efficient code.</p>
+        <p>Love HTML5, CSS3, WordPress, and a touch of jQuery.</p>
+        
+        <div class="skills">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>jQuery</span>
+        </div>
     </section>
-
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <ul class="project-list">
-        <li><strong>Spider Robot:</strong> Self-balancing Hexapod with Bluetooth + Wi-Fi control.</li>
-        <li><strong>GOATBALL:</strong> Multiplayer snake-like ball game with power-ups and real-time hosting.</li>
-        <!-- Add more projects as needed -->
-      </ul>
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio" style="padding: 4rem 1rem; text-align: center;">
+        <h2>My Work</h2>
+        <!-- Projects will go here -->
     </section>
-
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p>If you’d like to collaborate or just say hi, feel free to drop a message via social links or email.</p>
-    </section>
-
-    <footer>
-      <p>© 2025 Tanvir Azad. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
+</body>
 </html>
