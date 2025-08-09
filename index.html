@@ -606,7 +606,6 @@
 
         .animate {
             animation: fadeIn 0.8s ease-out forwards;
-            opacity: 0;
         }
 
         .delay-1 {
@@ -701,7 +700,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="particles" id="particles"></div>
-        <img src="assets/mahir.png" alt="Tanvir Azad" style="display: block; width: 100px;"> 
+        <img src="assets/mahir.png" alt="Tanvir Azad" class="profile-pic animate"> 
         
         <h1 class="animate delay-1">Tanvir Azad (Mahir)</h1>
         <h2 class="animate delay-1">Web & Java Developer</h2>
@@ -887,7 +886,7 @@
             <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
             <a href="#" class="social-link"><i class="fab fa-stack-overflow"></i></a>
         </div>
-        <p>© <span id="2025"></span> Tanvir Azad. All rights reserved.</p>
+        <p>© <span id="currentYear"></span> Tanvir Azad. All rights reserved.</p>
         <a href="#home" class="back-to-top">
             <i class="fas fa-arrow-up"></i>
         </a>
@@ -1033,9 +1032,11 @@
             threshold: 0.1
         });
         
-        document.querySelectorAll('.section-title, .project-card, .about-content > div, .contact-container > div').forEach((el, index) => {
-            observer.observe(el);
-            el.classList.add(`delay-${(index % 3) + 1}`);
+        // Observe all elements except those already with .animate class
+        document.querySelectorAll('.section-title, .project-card, .about-content > div, .contact-container > div').forEach((el) => {
+            if (!el.classList.contains('animate')) {
+                observer.observe(el);
+            }
         });
         
         // Initialize when DOM is loaded
