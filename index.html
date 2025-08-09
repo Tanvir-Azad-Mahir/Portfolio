@@ -3,16 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanvir Azad| Frontend Developer</title>
+    <title>Tanvir Azad | Frontend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
     <style>
         /* Modern Reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #f9fafb;
+            --card-bg: #ffffff;
+            --border: #e5e7eb;
+        }
+        
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
         
         /* Developer-themed styles */
         body {
-            font-family: 'Courier New', monospace;
-            background: #f9f9f9;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
         }
         
@@ -20,61 +37,219 @@
         nav {
             display: flex;
             justify-content: center;
-            padding: 2rem 0;
-            background: #fff;
-            border-bottom: 1px solid #eaeaea;
+            padding: 1.5rem 0;
+            background: var(--card-bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
+        
         nav a {
             margin: 0 1.5rem;
             text-decoration: none;
-            color: #000;
-            font-weight: bold;
+            color: var(--text);
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             font-size: 0.8rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
         }
         
         /* Hero Section with Photo */
         .hero {
             text-align: center;
-            padding: 3rem 1rem;
-            max-width: 700px;
+            padding: 4rem 1rem;
+            max-width: 800px;
             margin: 0 auto;
         }
+        
         .profile-pic {
-            width: 220px;
-            height: 250px;
-            border-radius: 10%;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
             object-fit: cover;
             margin: 0 auto 2rem;
-            border: 3px solid #333;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
+        
+        .profile-pic:hover {
+            transform: scale(1.05);
+        }
+        
         .hero h1 {
             font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--text);
         }
+        
+        .hero h2 {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
         .hero p {
             font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         /* Skills */
         .skills {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            flex-wrap: wrap;
+            gap: 0.8rem;
             margin-top: 2rem;
         }
+        
         .skills span {
-            background: #f0f0f0;
+            background: var(--card-bg);
             padding: 0.5rem 1.2rem;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
+            border-radius: 20px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .skills span:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Portfolio Section */
+        #portfolio {
+            padding: 4rem 1rem;
+            text-align: center;
+            background: var(--card-bg);
+        }
+        
+        #portfolio h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        #portfolio h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        /* Modern grid for projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .project-image {
+            height: 200px;
+            background: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+            text-align: left;
+        }
+        
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        
+        .project-info p {
+            color: var(--text-light);
             font-size: 0.9rem;
-            color: #000;
+            margin-bottom: 1rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .project-tags span {
+            background: #e0e7ff;
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--card-bg);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero, #portfolio {
+            animation: fadeIn 0.8s ease-out;
         }
     </style>
 </head>
@@ -90,27 +265,74 @@
     
     <!-- Hero Section with Photo -->
     <section class="hero">
-        <!-- Replace "images/profile.jpg" with your image path -->
-        <img src="assets/mahir.png" alt="Your Name" class="profile-pic">
+        <img src="assets/mahir.png" alt="Tanvir Azad" class="profile-pic">
         
         <h1>Tanvir Azad (Mahir)</h1>
         <h2>Web & Java Developer</h2>
-        <p>Who focuses on writing clean, elegant, and efficient code.</p>
-        <p>Love HTML5, CSS3, WordPress,Javam,C++.</p>
-        <p>learning python for data  analysis .</p>
+        <p>I craft clean, elegant, and efficient solutions with a focus on user experience and performance.</p>
+        <p>Specializing in modern web technologies and Java application development.</p>
         
         <div class="skills">
             <span>HTML5</span>
             <span>CSS3</span>
-            <span>Data Structure & Algorithm </span>
-            <span>App & Software development with java</span>
+            <span>JavaScript</span>
+            <span>Java</span>
+            <span>C++</span>
+            <span>Data Structures</span>
+            <span>Algorithms</span>
+            <span>Python</span>
         </div>
     </section>
     
     <!-- Portfolio Section -->
-    <section id="portfolio" style="padding: 4rem 1rem; text-align: center;">
-        <h2>My Work</h2>
-        <!-- Projects will go here -->
+    <section id="portfolio">
+        <h2>Featured Projects</h2>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);"></div>
+                <div class="project-info">
+                    <h3>Java Application</h3>
+                    <p>A robust desktop application built with Java Swing for efficient data management.</p>
+                    <div class="project-tags">
+                        <span>Java</span>
+                        <span>Swing</span>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #10b981, #059669);"></div>
+                <div class="project-info">
+                    <h3>Web Dashboard</h3>
+                    <p>Interactive dashboard with real-time data visualization using modern web technologies.</p>
+                    <div class="project-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Chart.js</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #f59e0b, #d97706);"></div>
+                <div class="project-info">
+                    <h3>Algorithm Visualizer</h3>
+                    <p>Educational tool to visualize common algorithms with interactive controls.</p>
+                    <div class="project-tags">
+                        <span>C++</span>
+                        <span>Algorithms</span>
+                        <span>SFML</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+    
+    <footer>
+        <p>© 2023 Tanvir Azad. All rights reserved.</p>
+    </footer>
 </body>
 </html>
