@@ -20,7 +20,6 @@
             --card-bg: #ffffff;
             --border: #e5e7eb;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --nav-height: 70px;
         }
 
         .dark-mode {
@@ -47,6 +46,7 @@
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            padding-top: 60px; /* Added for fixed header */
         }
 
         /* Smooth scrolling */
@@ -54,13 +54,13 @@
             scroll-behavior: smooth;
         }
 
-        /* Navigation */
+        /* Navigation - Made smaller */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 5%;
-            height: var(--nav-height);
+            height: 60px;
             background-color: var(--card-bg);
             position: fixed;
             top: 0;
@@ -72,15 +72,16 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         nav a {
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
+            font-size: 0.75rem;
             position: relative;
-            padding: 0.5rem 0;
+            padding: 0.3rem 0;
         }
 
         nav a::after {
@@ -102,7 +103,7 @@
             background: none;
             border: none;
             color: var(--text);
-            font-size: 1.2rem;
+            font-size: 1rem;
             cursor: pointer;
             padding: 0.5rem;
             border-radius: 50%;
@@ -115,14 +116,13 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: calc(100vh - 60px);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 1rem;
-            padding-top: var(--nav-height);
             position: relative;
             overflow: hidden;
         }
@@ -152,11 +152,11 @@
         }
 
         .profile-pic {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 3px solid transparent;
@@ -171,7 +171,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2rem, 5vw, 3rem);
             margin-bottom: 1rem;
             font-weight: 700;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
@@ -181,14 +181,14 @@
         }
 
         .hero h2 {
-            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-size: clamp(1rem, 3vw, 1.3rem);
             font-weight: 400;
             color: var(--text-light);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-light);
             margin-bottom: 1rem;
             max-width: 600px;
@@ -197,13 +197,13 @@
         .cta-buttons {
             display: flex;
             gap: 1rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .btn {
-            padding: 0.8rem 1.5rem;
+            padding: 0.7rem 1.3rem;
             border-radius: 50px;
             font-weight: 500;
             text-decoration: none;
@@ -211,6 +211,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 0.9rem;
         }
 
         .btn-primary {
@@ -240,17 +241,17 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 2rem;
-            max-width: 800px;
+            gap: 0.7rem;
+            margin-top: 1.5rem;
+            max-width: 700px;
         }
 
         .skills span {
             background: var(--card-bg);
-            padding: 0.5rem 1.2rem;
+            padding: 0.4rem 1rem;
             border-radius: 50px;
             font-family: 'Space Mono', monospace;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text);
             border: 1px solid var(--border);
             transition: all 0.3s ease;
@@ -292,16 +293,16 @@
             }
         }
 
-        /* Portfolio Section */
+        /* Sections */
         section {
-            padding: 5rem 1rem;
+            padding: 4rem 1rem;
             position: relative;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
             position: relative;
             display: inline-block;
             left: 50%;
@@ -311,26 +312,27 @@
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
+            width: 60px;
+            height: 3px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             border-radius: 2px;
         }
 
+        /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .project-card {
             background: var(--card-bg);
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -338,12 +340,12 @@
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
 
         .project-image {
-            height: 200px;
+            height: 180px;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -367,19 +369,19 @@
         }
 
         .project-info {
-            padding: 1.5rem;
+            padding: 1.2rem;
         }
 
         .project-info h3 {
             margin-bottom: 0.5rem;
             color: var(--text);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .project-info p {
             color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            margin-bottom: 1.2rem;
         }
 
         .project-tags {
@@ -391,9 +393,9 @@
         .project-tags span {
             background: rgba(59, 130, 246, 0.1);
             color: var(--primary);
-            padding: 0.25rem 0.75rem;
+            padding: 0.2rem 0.6rem;
             border-radius: 50px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 500;
         }
 
@@ -401,14 +403,14 @@
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 1200px;
+            gap: 2rem;
+            max-width: 1100px;
             margin: 0 auto;
             align-items: center;
         }
 
         .about-text h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
             color: var(--primary);
         }
@@ -416,32 +418,33 @@
         .about-text p {
             margin-bottom: 1rem;
             color: var(--text-light);
+            font-size: 0.95rem;
         }
 
         .stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         .stat-item {
             background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 10px;
+            padding: 1.2rem;
+            border-radius: 8px;
             text-align: center;
             box-shadow: var(--shadow);
         }
 
         .stat-number {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
 
         .stat-label {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: var(--text-light);
         }
 
@@ -451,16 +454,16 @@
         }
 
         .contact-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 2rem;
         }
 
         .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
             color: var(--primary);
         }
 
@@ -473,29 +476,29 @@
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.8rem;
         }
 
         .contact-icon {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             background: var(--primary);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         .contact-text h4 {
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 0.2rem;
         }
 
         .contact-text p, .contact-text a {
             color: var(--text-light);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-decoration: none;
         }
 
@@ -505,51 +508,52 @@
         }
 
         .contact-form .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .contact-form label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             color: var(--text-light);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            padding: 0.8rem;
+            padding: 0.7rem;
             border: 1px solid var(--border);
             border-radius: 5px;
             background: var(--bg);
             color: var(--text);
+            font-size: 0.9rem;
         }
 
         .contact-form textarea {
-            min-height: 150px;
+            min-height: 120px;
             resize: vertical;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
             background: var(--card-bg);
             color: var(--text-light);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             position: relative;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
         .social-link {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             background: var(--bg);
             color: var(--text);
@@ -557,6 +561,7 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .social-link:hover {
@@ -567,10 +572,10 @@
 
         .back-to-top {
             position: absolute;
-            right: 2rem;
-            bottom: 2rem;
-            width: 40px;
-            height: 40px;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            width: 36px;
+            height: 36px;
             background: var(--primary);
             color: white;
             border-radius: 50%;
@@ -579,11 +584,12 @@
             justify-content: center;
             text-decoration: none;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
         }
 
         /* Animations */
@@ -599,7 +605,8 @@
         }
 
         .animate {
-            animation: fadeIn 1s ease-out forwards;
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
         }
 
         .delay-1 {
@@ -617,15 +624,62 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
-                display: none;
+                gap: 1rem;
             }
 
             .about-content, .contact-container {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                padding: 0 3%;
+                height: 50px;
+            }
+
+            body {
+                padding-top: 50px;
+            }
+
+            .hero {
+                min-height: calc(100vh - 50px);
+                padding: 0 0.5rem;
+            }
+
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 1rem;
             }
 
             .projects-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .back-to-top {
+                right: 1rem;
+                bottom: 1rem;
+                width: 30px;
+                height: 30px;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -647,7 +701,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="particles" id="particles"></div>
-        <img src="assets/mahir.png" alt="Tanvir Azad" class="profile-pic animate">
+        <img src="assets/profile.jpg" alt="Tanvir Azad" class="profile-pic animate">
         
         <h1 class="animate delay-1">Tanvir Azad (Mahir)</h1>
         <h2 class="animate delay-1">Web & Java Developer</h2>
@@ -677,10 +731,10 @@
 
     <!-- About Section -->
     <section id="about">
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title animate">About Me</h2>
         
         <div class="about-content">
-            <div class="about-text">
+            <div class="about-text animate delay-1">
                 <h3>Who I Am</h3>
                 <p>I'm a passionate developer with expertise in both frontend web development and Java application development. I love solving complex problems and creating efficient, user-friendly solutions.</p>
                 <p>With a strong foundation in computer science principles and hands-on experience in multiple programming languages, I bring a versatile skill set to every project.</p>
@@ -706,10 +760,10 @@
                 </div>
             </div>
             
-            <div class="skills-chart">
+            <div class="skills-chart animate delay-2">
                 <!-- This would be replaced with an actual chart in a real implementation -->
-                <div style="background: var(--card-bg); height: 100%; border-radius: 10px; display: flex; justify-content: center; align-items: center; box-shadow: var(--shadow);">
-                    <p style="color: var(--text-light);">Skills Visualization</p>
+                <div style="background: var(--card-bg); height: 100%; border-radius: 8px; display: flex; justify-content: center; align-items: center; box-shadow: var(--shadow); padding: 1rem;">
+                    <p style="color: var(--text-light); text-align: center;">Skills visualization would appear here (Chart.js or similar)</p>
                 </div>
             </div>
         </div>
@@ -717,10 +771,10 @@
 
     <!-- Portfolio Section -->
     <section id="portfolio">
-        <h2 class="section-title">My Projects</h2>
+        <h2 class="section-title animate">My Projects</h2>
         
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card animate">
                 <div class="project-image" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);"></div>
                 <div class="project-info">
                     <h3>Java Inventory System</h3>
@@ -734,7 +788,7 @@
                 </div>
             </div>
             
-            <div class="project-card">
+            <div class="project-card animate delay-1">
                 <div class="project-image" style="background: linear-gradient(135deg, #10b981, #059669);"></div>
                 <div class="project-info">
                     <h3>Interactive Web Dashboard</h3>
@@ -748,7 +802,7 @@
                 </div>
             </div>
             
-            <div class="project-card">
+            <div class="project-card animate delay-2">
                 <div class="project-image" style="background: linear-gradient(135deg, #f59e0b, #d97706);"></div>
                 <div class="project-info">
                     <h3>Algorithm Visualizer</h3>
@@ -760,28 +814,15 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="project-card">
-                <div class="project-image" style="background: linear-gradient(135deg, #ec4899, #db2777);"></div>
-                <div class="project-info">
-                    <h3>Python Data Analyzer</h3>
-                    <p>Data analysis tool that processes CSV files and generates visual reports using Python.</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Pandas</span>
-                        <span>Matplotlib</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
+        <h2 class="section-title animate">Get In Touch</h2>
         
         <div class="contact-container">
-            <div class="contact-info">
+            <div class="contact-info animate">
                 <h3>Contact Information</h3>
                 <div class="contact-details">
                     <div class="contact-item">
@@ -790,7 +831,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Email</h4>
-                            <a href="mailto:your.email@example.com">tanvir.azad@example.com</a>
+                            <a href="mailto:tanvir.azad@example.com">tanvir.azad@example.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -799,7 +840,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Phone</h4>
-                            <a href="tel:+1234567890">+1 (234) 567-890</a>
+                            <a href="tel:+880123456789">+880 123 456 789</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -814,7 +855,7 @@
                 </div>
             </div>
             
-            <div class="contact-form">
+            <div class="contact-form animate delay-1">
                 <form id="contactForm">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -879,16 +920,16 @@
         // Particle Animation
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
-            const particleCount = 20;
+            const particleCount = 15;
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
                 
                 // Random properties
-                const size = Math.random() * 10 + 5;
+                const size = Math.random() * 8 + 3;
                 const posX = Math.random() * 100;
-                const duration = Math.random() * 20 + 10;
+                const duration = Math.random() * 15 + 10;
                 const delay = Math.random() * 5;
                 
                 particle.style.width = `${size}px`;
@@ -908,8 +949,8 @@
             
             const targetProjects = 24;
             const targetYears = 3;
-            const duration = 2000; // 2 seconds
-            const interval = 50; // update every 50ms
+            const duration = 1500;
+            const interval = 30;
             
             const projectsStep = targetProjects / (duration / interval);
             const yearsStep = targetYears / (duration / interval);
@@ -957,7 +998,7 @@
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
         
-        // Smooth scroll for anchor links
+        // Smooth scroll for anchor links with header offset
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -967,8 +1008,8 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    const offset = 70; // Height of navbar
-                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+                    const headerHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                     
                     window.scrollTo({
                         top: targetPosition,
@@ -983,6 +1024,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
                 }
             });
         }, {
