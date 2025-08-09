@@ -150,7 +150,7 @@
             }
         }
 
-       .profile-pic {
+.profile-pic {
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -159,12 +159,13 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   
-  /* Simplified gradient border */
+  /* White background + gradient border */
   border: 3px solid transparent;
   background: 
-    linear-gradient(45deg, #ff0000, #00ff00) border-box, 
-    transparent padding-box;
+    linear-gradient(45deg, var(--primary), var(--secondary)) border-box, 
+    white padding-box; /* Changed to white */
   background-clip: padding-box, border-box;
+  background-origin: border-box;
 }
 
         .profile-pic:hover {
