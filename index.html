@@ -158,14 +158,15 @@
   margin-bottom: 1.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  /* White background + gradient border */
+
+  /* White background + gradient border (no blending) */
   border: 3px solid transparent;
   background: 
     linear-gradient(45deg, var(--primary), var(--secondary)) border-box, 
-    white padding-box; /* Changed to white */
+    white padding-box;
   background-clip: padding-box, border-box;
   background-origin: border-box;
+  padding: 0; /* Ensure no extra space affects the background */
 }
 
         .profile-pic:hover {
