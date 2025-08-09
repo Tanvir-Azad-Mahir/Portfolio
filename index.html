@@ -46,15 +46,14 @@
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
-            padding-top: 60px; /* Added for fixed header */
+            padding-top: 60px;
         }
 
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Navigation - Made smaller */
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
@@ -700,7 +699,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="particles" id="particles"></div>
-        <img src="assets/mahir.png" alt="Tanvir Azad" class="profile-pic animate"> 
+        <img src="assets/mahir.png" alt="Tanvir Azad" class="profile-pic"> 
         
         <h1 class="animate delay-1">Tanvir Azad (Mahir)</h1>
         <h2 class="animate delay-1">Web & Java Developer</h2>
@@ -760,7 +759,6 @@
             </div>
             
             <div class="skills-chart animate delay-2">
-                <!-- This would be replaced with an actual chart in a real implementation -->
                 <div style="background: var(--card-bg); height: 100%; border-radius: 8px; display: flex; justify-content: center; align-items: center; box-shadow: var(--shadow); padding: 1rem;">
                     <p style="color: var(--text-light); text-align: center;">Skills visualization would appear here (Chart.js or similar)</p>
                 </div>
@@ -1032,11 +1030,9 @@
             threshold: 0.1
         });
         
-        // Observe all elements except those already with .animate class
+        // Observe all elements except profile pic
         document.querySelectorAll('.section-title, .project-card, .about-content > div, .contact-container > div').forEach((el) => {
-            if (!el.classList.contains('animate')) {
-                observer.observe(el);
-            }
+            observer.observe(el);
         });
         
         // Initialize when DOM is loaded
