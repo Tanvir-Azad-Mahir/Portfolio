@@ -691,37 +691,62 @@
   padding: 20px;
 }
 
-#certificates ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 15px;
-  padding: 0;
-  list-style: none;
+/* Certificates Section */
+#certificates {
+    background: var(--card-bg);
 }
 
-#certificates li {
-  background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 15px;
-  transition: all 0.3s ease;
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-#certificates li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-  border-color: #007BFF;
+.certificate-card {
+    background: var(--bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+    padding: 1.5rem;
 }
 
-#certificates a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  display: block;
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-#certificates a:hover {
-  color: #007BFF;
+.certificate-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.certificate-header i {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.certificate-header h3 {
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+.certificate-body p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
 }
         }
     </style>
@@ -769,22 +794,44 @@
                 <i class="fas fa-code"></i> View Work
             </a>
         </div>
-        <section id="certificates">
-  <h2>My Certificates</h2>
-  <ul>
-    <li>
-      <a href="https://www.credly.com/badges/41a9c2b3-16fd-47a5-8545-a9bc2d6d4572/public_url" target="_blank">
-        Introduction to Cyber Security=2023
-      </a>
-    </li>
-    <li>
-      <a href="https://www.credly.com/badges/01061deb-ae86-41c2-8a94-b6a2a388fd98/public_url" target="_blank">
-        Computer Hardware Basics - 2023
-      </a>
-    </li>
-  </ul>
+       <!-- Add this section where you want certificates to appear (after Projects or About section) -->
+<section id="certificates">
+    <h2 class="section-title animate">My Certificates</h2>
+    
+    <div class="certificates-grid">
+        <!-- Certificate 1 -->
+        <div class="certificate-card animate">
+            <div class="certificate-header">
+                <i class="fas fa-certificate"></i>
+                <h3>Introduction to Cyber Security</h3>
+            </div>
+            <div class="certificate-body">
+                <p>Issued: 2023</p>
+                <a href="https://www.credly.com/badges/41a9c2b3-16fd-47a5-8545-a9bc2d6d4572/public_url" 
+                   target="_blank" 
+                   class="btn btn-outline">
+                    <i class="fas fa-external-link-alt"></i> Verify Credential
+                </a>
+            </div>
+        </div>
+        
+        <!-- Certificate 2 -->
+        <div class="certificate-card animate delay-1">
+            <div class="certificate-header">
+                <i class="fas fa-certificate"></i>
+                <h3>Computer Hardware Basics</h3>
+            </div>
+            <div class="certificate-body">
+                <p>Issued: 2023</p>
+                <a href="https://www.credly.com/badges/01061deb-ae86-41c2-8a94-b6a2a388fd98/public_url" 
+                   target="_blank" 
+                   class="btn btn-outline">
+                    <i class="fas fa-external-link-alt"></i> Verify Credential
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
-    </section>
 
     <!-- About Section -->
     <section id="about">
