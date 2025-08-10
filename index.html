@@ -1,3 +1,6 @@
+I'll modify the HTML to remove the skills visualization and add an education section. Here's the updated code:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -404,11 +407,10 @@
         /* About Section */
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 2rem;
             max-width: 1100px;
             margin: 0 auto;
-            align-items: center;
         }
 
         .about-text h3 {
@@ -448,6 +450,53 @@
         .stat-label {
             font-size: 0.8rem;
             color: var(--text-light);
+        }
+
+        /* Education Section */
+        .education-section {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .education-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .education-institution {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .education-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
         }
 
         /* Certificates Section */
@@ -744,6 +793,7 @@
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
+            <a href="#education">Education</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
         </div>
@@ -788,7 +838,7 @@
         <h2 class="section-title animate">About Me</h2>
         
         <div class="about-content">
-            <div class="about-text animate delay-1">
+            <div class="about-text animate">
                 <h3>Who I Am</h3>
                 <p>I'm a passionate developer with expertise in both frontend web development and Java application development. I love solving complex problems and creating efficient, user-friendly solutions.</p>
                 <p>With a strong foundation in computer science principles and hands-on experience in multiple programming languages, I bring a versatile skill set to every project.</p>
@@ -813,11 +863,54 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="skills-chart animate delay-2">
-                <div style="background: var(--card-bg); height: 100%; border-radius: 8px; display: flex; justify-content: center; align-items: center; box-shadow: var(--shadow); padding: 1rem;">
-                    <p style="color: var(--text-light); text-align: center;">Skills visualization would appear here (Chart.js or similar)</p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title animate">Education</h2>
+        
+        <div class="education-section">
+            <div class="education-item animate">
+                <div class="education-header">
+                    <div>
+                        <h3 class="education-title">Bachelor of Science in Computer Science & Engineering</h3>
+                        <p class="education-institution">Port City International University</p>
+                    </div>
+                    <span class="education-date">2022 - Present</span>
                 </div>
+                <p class="education-description">
+                    Currently pursuing my undergraduate degree with a focus on software development, algorithms, and system design. 
+                    Coursework includes Data Structures, Algorithms, Database Systems, Web Development, and Computer Networks.
+                </p>
+            </div>
+            
+            <div class="education-item animate delay-1">
+                <div class="education-header">
+                    <div>
+                        <h3 class="education-title">Higher Secondary Certificate (HSC)</h3>
+                        <p class="education-institution">Chittagong Government Model College</p>
+                    </div>
+                    <span class="education-date">2019 - 2021</span>
+                </div>
+                <p class="education-description">
+                    Completed higher secondary education in Science with a focus on Physics, Chemistry, and Mathematics.
+                    Achieved outstanding academic results and participated in various science competitions.
+                </p>
+            </div>
+            
+            <div class="education-item animate delay-2">
+                <div class="education-header">
+                    <div>
+                        <h3 class="education-title">Secondary School Certificate (SSC)</h3>
+                        <p class="education-institution">Chittagong Collegiate School</p>
+                    </div>
+                    <span class="education-date">2017 - 2019</span>
+                </div>
+                <p class="education-description">
+                    Completed secondary education in Science with excellent academic performance. 
+                    Developed foundational skills in mathematics and science that would later support my programming journey.
+                </p>
             </div>
         </div>
     </section>
@@ -984,8 +1077,7 @@
             <i class="fas fa-arrow-up"></i>
         </a>
     </footer>
-
-    <script>
+<script>
         // Dark Mode Toggle
         const themeToggle = document.getElementById('themeToggle');
         const icon = themeToggle.querySelector('i');
@@ -1138,3 +1230,4 @@
     </script>
 </body>
 </html>
+   
