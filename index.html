@@ -150,24 +150,22 @@
             }
         }
 
-.profile-pic {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  /* White background + gradient border (no blending) */
-  border: 3px solid transparent;
-  background: 
-    linear-gradient(45deg, var(--primary), var(--secondary)) border-box, 
-    white padding-box;
-  background-clip: padding-box, border-box;
-  background-origin: border-box;
-  padding: 0; /* Ensure no extra space affects the background */
-}
+        .profile-pic {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid transparent;
+            background: 
+                linear-gradient(45deg, var(--primary), var(--secondary)) border-box, 
+                white padding-box;
+            background-clip: padding-box, border-box;
+            background-origin: border-box;
+            padding: 0;
+        }
 
         .profile-pic:hover {
             transform: scale(1.05) rotate(2deg);
@@ -452,6 +450,55 @@
             color: var(--text-light);
         }
 
+        /* Certificates Section */
+        .certificates-row {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            flex-wrap: wrap;
+        }
+
+        .certificate-card {
+            background: var(--bg);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .certificate-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .certificate-header i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .certificate-header h3 {
+            font-size: 1.1rem;
+            color: var(--text);
+            text-align: left;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .certificate-body p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
         /* Contact Section */
         #contact {
             background: var(--card-bg);
@@ -646,6 +693,10 @@
             .section-title {
                 font-size: 1.8rem;
             }
+
+            .certificates-row {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 600px) {
@@ -684,71 +735,6 @@
                 height: 30px;
                 font-size: 0.8rem;
             }
-            #certificates {
-  font-family: 'Arial', sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Certificates Section */
-#certificates {
-    background: var(--card-bg);
-}
-
-.certificates-row {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    flex-wrap: wrap;
-}
-
-.certificate-card {
-    background: var(--bg);
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
-    border: 1px solid var(--border);
-    padding: 1.5rem;
-    width: calc(50% - 1rem); /* Two cards per row with gap */
-    min-width: 300px; /* Minimum width before wrapping */
-}
-
-.certificate-header {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 1rem;
-}
-
-.certificate-header i {
-    color: var(--primary);
-    font-size: 1.5rem;
-}
-
-.certificate-header h3 {
-    font-size: 1.1rem;
-    color: var(--text);
-    text-align: left; /* Force left alignment */
-    margin: 0; /* Remove default margins */
-    flex-grow: 1;
-}
-
-.certificate-body p {
-    color: var(--text-light);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    text-align: left;
-}
-
-@media (max-width: 768px) {
-    .certificate-card {
-        width: 100%; /* Full width on mobile */
-    }
-}
         }
     </style>
 </head>
@@ -795,8 +781,7 @@
                 <i class="fas fa-code"></i> View Work
             </a>
         </div>
-
-
+    </section>
 
     <!-- About Section -->
     <section id="about">
@@ -828,48 +813,49 @@
                     </div>
                 </div>
             </div>
-            <!-- Certificates Section -->
-<section id="certificates">
-    <h2 class="section-title animate">My Certificates</h2>
-    
-    <div class="certificates-row">
-        <!-- Certificate 1 -->
-        <div class="certificate-card animate">
-            <div class="certificate-header">
-                <i class="fas fa-certificate"></i>
-                <h3 style="text-align: left;">Introduction to Cyber Security</h3>
-            </div>
-            <div class="certificate-body">
-                <p>Issued: 2023</p>
-                <a href="https://www.credly.com/badges/41a9c2b3-16fd-47a5-8545-a9bc2d6d4572/public_url" 
-                   target="_blank" 
-                   class="btn btn-outline">
-                    <i class="fas fa-external-link-alt"></i> Verify Credential
-                </a>
-            </div>
-        </div>
-        
-        <!-- Certificate 2 -->
-        <div class="certificate-card animate delay-1">
-            <div class="certificate-header">
-                <i class="fas fa-certificate"></i>
-                <h3 style="text-align: left;">Computer Hardware Basics</h3>
-            </div>
-            <div class="certificate-body">
-                <p>Issued: 2023</p>
-                <a href="https://www.credly.com/badges/01061deb-ae86-41c2-8a94-b6a2a388fd98/public_url" 
-                   target="_blank" 
-                   class="btn btn-outline">
-                    <i class="fas fa-external-link-alt"></i> Verify Credential
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
             
             <div class="skills-chart animate delay-2">
                 <div style="background: var(--card-bg); height: 100%; border-radius: 8px; display: flex; justify-content: center; align-items: center; box-shadow: var(--shadow); padding: 1rem;">
                     <p style="color: var(--text-light); text-align: center;">Skills visualization would appear here (Chart.js or similar)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <h2 class="section-title animate">My Certificates</h2>
+        
+        <div class="certificates-row">
+            <!-- Certificate 1 -->
+            <div class="certificate-card animate">
+                <div class="certificate-header">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Introduction to Cyber Security</h3>
+                </div>
+                <div class="certificate-body">
+                    <p>Issued: 2023</p>
+                    <a href="https://www.credly.com/badges/41a9c2b3-16fd-47a5-8545-a9bc2d6d4572/public_url" 
+                       target="_blank" 
+                       class="btn btn-outline">
+                        <i class="fas fa-external-link-alt"></i> Verify Credential
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Certificate 2 -->
+            <div class="certificate-card animate delay-1">
+                <div class="certificate-header">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Computer Hardware Basics</h3>
+                </div>
+                <div class="certificate-body">
+                    <p>Issued: 2023</p>
+                    <a href="https://www.credly.com/badges/01061deb-ae86-41c2-8a94-b6a2a388fd98/public_url" 
+                       target="_blank" 
+                       class="btn btn-outline">
+                        <i class="fas fa-external-link-alt"></i> Verify Credential
+                    </a>
                 </div>
             </div>
         </div>
@@ -1140,7 +1126,7 @@
         });
         
         // Observe all elements except profile pic
-        document.querySelectorAll('.section-title, .project-card, .about-content > div, .contact-container > div').forEach((el) => {
+        document.querySelectorAll('.section-title, .project-card, .about-content > div, .contact-container > div, .certificate-card').forEach((el) => {
             observer.observe(el);
         });
         
