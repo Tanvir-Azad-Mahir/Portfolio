@@ -696,28 +696,25 @@
     background: var(--card-bg);
 }
 
-.certificates-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+.certificates-row {
+    display: flex;
+    justify-content: center;
     gap: 1.5rem;
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 1rem;
+    flex-wrap: wrap;
 }
 
 .certificate-card {
     background: var(--bg);
     border-radius: 8px;
-    overflow: hidden;
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
     border: 1px solid var(--border);
     padding: 1.5rem;
-}
-
-.certificate-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 1rem); /* Two cards per row with gap */
+    min-width: 300px; /* Minimum width before wrapping */
 }
 
 .certificate-header {
@@ -735,17 +732,21 @@
 .certificate-header h3 {
     font-size: 1.1rem;
     color: var(--text);
+    text-align: left; /* Force left alignment */
+    margin: 0; /* Remove default margins */
+    flex-grow: 1;
 }
 
 .certificate-body p {
     color: var(--text-light);
     font-size: 0.9rem;
     margin-bottom: 1rem;
+    text-align: left;
 }
 
-@media (max-width: 600px) {
-    .certificates-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 768px) {
+    .certificate-card {
+        width: 100%; /* Full width on mobile */
     }
 }
         }
@@ -794,44 +795,8 @@
                 <i class="fas fa-code"></i> View Work
             </a>
         </div>
-       <!-- Add this section where you want certificates to appear (after Projects or About section) -->
-<section id="certificates">
-    <h2 class="section-title animate">My Certificates</h2>
-    
-    <div class="certificates-grid">
-        <!-- Certificate 1 -->
-        <div class="certificate-card animate">
-            <div class="certificate-header">
-                <i class="fas fa-certificate"></i>
-                <h3>Introduction to Cyber Security</h3>
-            </div>
-            <div class="certificate-body">
-                <p>Issued: 2023</p>
-                <a href="https://www.credly.com/badges/41a9c2b3-16fd-47a5-8545-a9bc2d6d4572/public_url" 
-                   target="_blank" 
-                   class="btn btn-outline">
-                    <i class="fas fa-external-link-alt"></i> Verify Credential
-                </a>
-            </div>
-        </div>
-        
-        <!-- Certificate 2 -->
-        <div class="certificate-card animate delay-1">
-            <div class="certificate-header">
-                <i class="fas fa-certificate"></i>
-                <h3>Computer Hardware Basics</h3>
-            </div>
-            <div class="certificate-body">
-                <p>Issued: 2023</p>
-                <a href="https://www.credly.com/badges/01061deb-ae86-41c2-8a94-b6a2a388fd98/public_url" 
-                   target="_blank" 
-                   class="btn btn-outline">
-                    <i class="fas fa-external-link-alt"></i> Verify Credential
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+
+
 
     <!-- About Section -->
     <section id="about">
@@ -863,6 +828,44 @@
                     </div>
                 </div>
             </div>
+            <!-- Certificates Section -->
+<section id="certificates">
+    <h2 class="section-title animate">My Certificates</h2>
+    
+    <div class="certificates-row">
+        <!-- Certificate 1 -->
+        <div class="certificate-card animate">
+            <div class="certificate-header">
+                <i class="fas fa-certificate"></i>
+                <h3 style="text-align: left;">Introduction to Cyber Security</h3>
+            </div>
+            <div class="certificate-body">
+                <p>Issued: 2023</p>
+                <a href="https://www.credly.com/badges/41a9c2b3-16fd-47a5-8545-a9bc2d6d4572/public_url" 
+                   target="_blank" 
+                   class="btn btn-outline">
+                    <i class="fas fa-external-link-alt"></i> Verify Credential
+                </a>
+            </div>
+        </div>
+        
+        <!-- Certificate 2 -->
+        <div class="certificate-card animate delay-1">
+            <div class="certificate-header">
+                <i class="fas fa-certificate"></i>
+                <h3 style="text-align: left;">Computer Hardware Basics</h3>
+            </div>
+            <div class="certificate-body">
+                <p>Issued: 2023</p>
+                <a href="https://www.credly.com/badges/01061deb-ae86-41c2-8a94-b6a2a388fd98/public_url" 
+                   target="_blank" 
+                   class="btn btn-outline">
+                    <i class="fas fa-external-link-alt"></i> Verify Credential
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
             
             <div class="skills-chart animate delay-2">
                 <div style="background: var(--card-bg); height: 100%; border-radius: 8px; display: flex; justify-content: center; align-items: center; box-shadow: var(--shadow); padding: 1rem;">
